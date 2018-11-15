@@ -9,6 +9,7 @@
 
   <modules>
 	<module>register</module>
+    <module>common</module>
   </modules>
   
   <build>
