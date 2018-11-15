@@ -29,7 +29,7 @@ public final class PageUtil<T extends Serializable> implements Serializable {
     }
 
     public static <T extends Serializable> Page<T> transform(Page<?> page, Class<T> classType) {
-        Page<T> pb = new Page<>();
+        Page<T> pb = new Page<T>();
         try {
             pb.setList(copy(page.getList(), classType));
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public final class PageUtil<T extends Serializable> implements Serializable {
         if (source.size() == 0) {
             return Collections.emptyList();
         }
-        List<T> res = new ArrayList<>(source.size());
+        List<T> res = new ArrayList<T>(source.size());
         for (Object o : source) {
             T t = clazz.newInstance();
             BeanUtil.copyProperties(o, t);
