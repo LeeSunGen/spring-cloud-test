@@ -54,7 +54,7 @@ public class OrderController extends BaseController {
         BeanUtils.copyProperties(orderInfo,orderDTO);
         return Results.newSuccessResult(orderDTO);
     }
-    @ApiOperation(value = "/rest/order/updateOrderStatus",notes = "查询订单")
+    @ApiOperation(value = "/rest/order/updateOrderStatus",notes = "更新订单状态")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "orderId" ,value = "订单ID" ,dataType = ApiDataType.LONG ,paramType = ApiParamType.QUERY),
             @ApiImplicitParam(name = "payStatus" ,value = "状态值" ,dataType = ApiDataType.LONG ,paramType = ApiParamType.QUERY)

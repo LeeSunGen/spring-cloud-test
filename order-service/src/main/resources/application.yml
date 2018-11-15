@@ -31,7 +31,7 @@ eureka:
        defaultZone: http://111.231.189.44:8761/eureka
 #swagger
 swagger:
-  base-package: com.com.itmuch.cloud.study.order.controller
+  base-package: com.itmuch.cloud.study.order.controller
 # logging
 logging:
   level: com.itmuch.cloud.study.order.entity
