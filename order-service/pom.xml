@@ -8,6 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+	<!-- 引入spring boot的依赖 -->
 	<parent>
 		<groupId>com.itmuch.cloud</groupId>
 		<artifactId>parent</artifactId>
