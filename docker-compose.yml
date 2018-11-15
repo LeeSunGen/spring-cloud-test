@@ -1,0 +1,45 @@
+version: "2.1"
+
+#services:
+#  version: "2"
+services:
+  register:
+    image: register:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8761:8761/tcp"
+  gateway:
+    image: gateway:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8769:8768/tcp"
+
+  order-service:
+    image: order-service:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8763:8763/tcp"
+
+  account-service:
+    image: account-service:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8762:8762/tcp"
+
+  commodity-service:
+    image: commodity-service:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8764:8764/tcp"
+
+  payment-service:
+    image: payment-service:0.0.1-SNAPSHOT
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8765:8765/tcp"
