@@ -28,7 +28,12 @@
             <version>1.18.4</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
         <dependency>
@@ -105,6 +110,19 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
             <version>1.5.9.RELEASE</version>
         </dependency>
+
+        <!--swagger 接口文档-->
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.7.0.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.battcn</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.4.5-RELEASE</version>
+        </dependency>
         <!--feign-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -117,12 +135,7 @@
             <artifactId>spring-cloud-starter-hystrix</artifactId>
             <version>1.4.5.RELEASE</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
-        </dependency>
+
     </dependencies>
 
 

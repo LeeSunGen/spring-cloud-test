@@ -7,12 +7,20 @@
 	<artifactId>payment-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
+
+
+	<!--<parent>-->
+		<!--<groupId>com.itmuch.cloud</groupId>-->
+		<!--<artifactId>parent</artifactId>-->
+		<!--<version>0.0.1-SNAPSHOT</version>-->
+	<!--</parent>-->
+	<!-- 引入spring boot的依赖 -->
 	<parent>
-		<groupId>com.itmuch.cloud</groupId>
-		<artifactId>parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
 	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.itmuch.cloud</groupId>
@@ -46,19 +54,26 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 			<version>1.4.4.RELEASE</version>
 		</dependency>
-		<!--swagger 接口文档-->
+
+		<!-- 修改后立即生效，热部署 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.spring4all</groupId>
 			<artifactId>swagger-spring-boot-starter</artifactId>
 			<version>1.7.0.RELEASE</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.battcn</groupId>
 			<artifactId>swagger-spring-boot-starter</artifactId>
 			<version>1.4.5-RELEASE</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
