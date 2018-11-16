@@ -41,4 +41,5 @@
 ```
 ### 业务系统介绍
 * 系统架构图
-![输入图片说明](https://github.com/qccr-twl2123/springcloud/blob/master/images/新浪授权流程.jpg "在这里输入图片标题")
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/resources/images/jiagou-test.jpg "在这里输入图片标题")
