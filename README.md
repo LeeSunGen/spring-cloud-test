@@ -27,6 +27,7 @@
 8. feign 服务调用
 9. hystrix 熔断超时设置
 10. Log4j2 日志框架
+11.容器管理 Rancher       
 ```
 * 未来愿景
 ```text
@@ -74,3 +75,30 @@
 * 网关接口汇总页面
 
 ![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/gateway-api-summary.jpg "在这里输入图片标题")
+
+### 容器管理Rancher
+```text
+支持环境级别的基于角色的访问控制，方便用户通过角色配置控制用户或用户组对开发环境或者生产环境的访问权限
+提供了可视化的运维界面
+提供了主机资源管理、容器编排、扩容、缩容、资源监控、负载均衡、配置管理以及 API 调用等重要功能
+```
+* 应用界面
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/rancher-app.jpg "在这里输入图片标题")
+
+* 应用拥有的服务
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/rancher-service.jpg "在这里输入图片标题")
+
+* 应用创建的容器
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/rancher-container.jpg "在这里输入图片标题")
+
+* 容器的详细信息
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/rancher-container-details.jpg "在这里输入图片标题")
+
+
+
+### 参考资料
+[微服务一站式架构](https://gitbook.cn/gitchat/column/5b4fd439bf8ece6c81e44cfb?utm_source=zd180801)
+[springcloud各组件超时时间设置](http://www.itmuch.com/spring-cloud-sum/spring-cloud-timeout/)

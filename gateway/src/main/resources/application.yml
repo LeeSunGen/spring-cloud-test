@@ -17,3 +17,6 @@ zuul:
     order-service:
       path: /order-service/**
       serviceId: order-service
+  host:
+    socket-timeout-millis: 10000
+    connect-timeout-millis: 2000
