@@ -2,6 +2,17 @@
 ```text
 本项目采用spring-cloud-boot-docker为基础架构,目的在于搭建一个微服务快速开发脚手架.
 ```
+* 环境搭建
+```text
+准备一台centos7 内存4G+, 安装如下插件
+1. jdk8
+2. maven
+3. git
+4 .mysql
+5. docker 
+6. docker-compose
+7. 使用docker安装rancher
+```
 * 技术选型
 ```text
 1. Hibernate-Validator 参数校验框架
@@ -20,4 +31,14 @@
 1. docker 将镜像上传私有库
 2. docker 跨主机部署
 3. docker 数据库多容器共享数据库
+4. 集成rabbitMQ消息系统
+5. 集成redis缓存插件
+6. 实现mysql主从复制
+7. 集成elk日志分析系统
+8. 集成oss对象存储系统
+9. 集成分库分表插件
+10. zuul集成oauth权限验证框架
 ```
+### 业务系统介绍
+* 系统架构图
+![输入图片说明](https://github.com/qccr-twl2123/springcloud/blob/master/images/新浪授权流程.jpg "在这里输入图片标题")
