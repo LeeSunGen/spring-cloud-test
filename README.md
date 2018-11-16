@@ -37,8 +37,23 @@
 7. 集成elk日志分析系统
 8. 集成oss对象存储系统
 9. 集成分库分表插件
-10. zuul集成oauth权限验证框架
+10. zuul集成oauth2权限验证框架
 ```
+* 部署运行
+```text
+1. git clone <url> 
+2. 进入项目的当前目录,依次执行如下构建命令
+   2.1 编译打包,排除测试类
+   mvn clean package -Dmaven.test.skip=true
+   2.2 构建镜像
+   mvn package  docker:build
+   mvn package -Dmaven.test.skip=true docker:build(推荐:排除测试类)
+3. 构建成功,运行docker images出现如下页面   
+```
+
+![输入图片说明](https://images.gitbook.cn/11af6780-d79f-11e8-a10b-5f454c3ff2d1 "在这里输入图片标题")
+
+
 ### 业务系统介绍
 * 系统架构图
 
