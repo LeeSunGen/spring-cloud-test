@@ -48,7 +48,8 @@
    2.2 构建镜像
    mvn package  docker:build
    mvn package -Dmaven.test.skip=true docker:build(推荐:排除测试类)
-3. 构建成功,运行docker images出现如下页面   
+3. 构建成功,运行docker images出现如下页面 
+4. 运行docker-compose up 启动服务  
 ```
 
 ![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/spring-cloud-test-images.jpg "在这里输入图片标题")
@@ -63,3 +64,11 @@
 
 ![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/order-pay.png "在这里输入图片标题")
 
+### 主要页面展示
+* 服务注册中心
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/regsiter-page.jpg "在这里输入图片标题")
+
+* 网关接口汇总页面
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/gateway-api-summary.jpg "在这里输入图片标题")
