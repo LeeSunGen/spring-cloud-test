@@ -51,10 +51,15 @@
 3. 构建成功,运行docker images出现如下页面   
 ```
 
-![输入图片说明](https://images.gitbook.cn/11af6780-d79f-11e8-a10b-5f454c3ff2d1 "在这里输入图片标题")
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/spring-cloud-test-images.jpg "在这里输入图片标题")
 
 
 ### 业务系统介绍
 * 系统架构图
 
 ![输入图片说明](https://images.gitbook.cn/11af6780-d79f-11e8-a10b-5f454c3ff2d1 "在这里输入图片标题")
+
+* Demo 业务流程图
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/order-pay.png "在这里输入图片标题")
+
