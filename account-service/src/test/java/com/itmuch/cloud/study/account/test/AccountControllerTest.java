@@ -1,5 +1,6 @@
 package com.itmuch.cloud.study.account.test;
 
+import cn.hutool.http.HttpRequest;
 import com.alibaba.fastjson.JSON;
 import com.itmuch.cloud.study.account.controller.AccountController;
 import org.junit.Test;
@@ -23,5 +24,11 @@ public class AccountControllerTest {
     @Test
     public void updateBalanceByUserId(){
         System.out.println(JSON.toJSONString(accountController.updateBalanceByUserId(1L,-300L)));
+    }
+
+
+    public static void main(String[] args) {
+        String result = HttpRequest.get("http://111.231.189.44:8763/rest/order/getOrderInfoById?orderId=2").execute().body();
+        System.out.println(result);
     }
 }
