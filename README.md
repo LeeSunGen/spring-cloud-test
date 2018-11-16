@@ -2,7 +2,7 @@
 ```text
 本项目采用spring-cloud-boot-docker为基础架构,目的在于搭建一个微服务快速开发脚手架.
 ```
-[网关接口汇总测试地址](http://111.231.189.44:8769/swagger-ui.html)
+[网关接口汇总测试地址](http://111.231.189.44:8768/swagger-ui.html)
 
 * 环境搭建
 ```text
