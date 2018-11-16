@@ -42,4 +42,4 @@
 ### 业务系统介绍
 * 系统架构图
 
-![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/resources/images/jiagou-test.jpg "在这里输入图片标题")
+![输入图片说明](https://images.gitbook.cn/11af6780-d79f-11e8-a10b-5f454c3ff2d1 "在这里输入图片标题")
