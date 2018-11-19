@@ -26,6 +26,7 @@ eureka:
     appname: payment-service
     instance-id: payment-service:port-8765
     prefer-ip-address: true
+    health-check-url-path: /health
   client:
     service-url:
        defaultZone: http://111.231.189.44:8761/eureka

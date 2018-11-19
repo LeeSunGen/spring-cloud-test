@@ -1,14 +1,12 @@
 package com.itmuch.cloud.study.gateway;
 
 import com.google.common.collect.Lists;
-import com.itmuch.cloud.study.gateway.filter.AccessFilter;
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import springfox.documentation.swagger.web.SwaggerResource;
@@ -27,10 +25,7 @@ public class GatewayApplication {
         SpringApplication.run(GatewayApplication.class, args);
     }
 
-    @Bean
-    public AccessFilter accessFilter() {
-        return new AccessFilter();
-    }
+
 
     @Component
     @Primary

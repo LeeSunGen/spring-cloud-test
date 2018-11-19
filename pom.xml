@@ -8,6 +8,7 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>auth-service</module>
 	<module>register</module>
     <module>gateway</module>
     <module>common</module>

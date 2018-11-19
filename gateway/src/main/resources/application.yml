@@ -13,10 +13,21 @@ eureka:
     serviceUrl:
       defaultZone: http://111.231.189.44:8761/eureka
 zuul:
+  prefix: /api # 设置一个公共的前缀
+  ignored-services: '*' #此配置表名忽略所有默认路由，都由配置文件决定
+  host:
+      connect-timeout-millis: 20000
+      socket-timeout-millis: 20000
   routes:
     order-service:
-      path: /order-service/**
+      path: /order/**
       serviceId: order-service
-  host:
-    socket-timeout-millis: 10000
-    connect-timeout-millis: 2000
+    commodity-service:
+      path: /commodity/**
+      serviceId: commodity-service
+    account-service:
+      path: /account/**
+      serviceId: account-service
+    payment-service:
+      path: /payment/**
+      serviceId: payment-service
