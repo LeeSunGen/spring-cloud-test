@@ -31,3 +31,10 @@ zuul:
     payment-service:
       path: /payment/**
       serviceId: payment-service
+security:
+  oauth2:
+    resource:
+      filter-order: 3  # 将资源过滤器链提升到springsecurity的过滤器链之前
+      id:  /api/**
+      token-info-uri: http://localhost:8080/oauth/check_token
+      prefer-token-info: true
