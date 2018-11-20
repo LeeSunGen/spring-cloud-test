@@ -8,6 +8,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Primary;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.stereotype.Component;
 import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
@@ -19,6 +21,8 @@ import java.util.List;
 @EnableZuulProxy
 @EnableSwagger2Doc
 @EnableDiscoveryClient
+@EnableWebSecurity
+@EnableOAuth2Client
 public class GatewayApplication {
 
     public static void main(String[] args) {
