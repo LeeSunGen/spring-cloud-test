@@ -108,21 +108,40 @@
 * 获取授权(token有效期30d)
 ```text
 http://111.231.189.44:8768/oauth/token?grant_type=client_credentials&scope=app&client_id=acme&client_secret=acmesecret
+
+result:
+{
+  "access_token": "294d68ef-5d1c-4d07-9bc7-4e1132c2cef8",
+  "token_type": "bearer",
+  "expires_in": 2584089,
+  "scope": "app"
+}
 ```
-
-![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/get_token.jpg "在这里输入图片标题")
-
 * 拿到access_token请求接口,否则报权限错误
 ```text
 http://111.231.189.44:8768/api/order/rest/order/getOrderInfoById?orderId=2&access_token=294d68ef-5d1c-4d07-9bc7-4e1132c2cef8
 ```
 ```text
+不传access_token:
 {
   "error": "unauthorized",
   "error_description": "Full authentication is required to access this resource"
 }
+
+传access_token:
+{
+  "code": 0,
+  "success": true,
+  "message": "success",
+  "data": {
+    "id": 2,
+    "userId": 1,
+    "commodityId": 1,
+    "purchaesCount": 1,
+    "payStatus": 1
+  }
+}
 ```
-![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/get_data.jpg "在这里输入图片标题")
 
 
 ### 参考资料
