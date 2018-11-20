@@ -106,3 +106,7 @@
 [springcloud各组件超时时间设置](http://www.itmuch.com/spring-cloud-sum/spring-cloud-timeout/)
 
 [rancher文档](https://rancher.com/docs/rancher/latest/zh/)
+
+[微服务开发基础框架](https://github.com/babylikebird/Micro-Service-Skeleton.git)
+
+[springcloud 实现github CAS 单点登录](https://segmentfault.com/a/1190000011098539#articleHeader4)
