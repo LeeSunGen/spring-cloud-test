@@ -33,10 +33,10 @@ public class GatewayApplication {
         @Override
         public List<SwaggerResource> get() {
             List resources = Lists.newArrayList();
-            resources.add(swaggerResource("order-service", "/order-service/v2/api-docs", "2.0"));
-            resources.add(swaggerResource("commodity-service", "/commodity-service/v2/api-docs", "2.0"));
-            resources.add(swaggerResource("payment-service", "/payment-service/v2/api-docs", "2.0"));
-            resources.add(swaggerResource("account-service", "/account-service/v2/api-docs", "2.0"));
+            resources.add(swaggerResource("order-service", "/api/order/v2/api-docs", "2.0"));
+            resources.add(swaggerResource("commodity-service", "/api/commodity/v2/api-docs", "2.0"));
+            resources.add(swaggerResource("payment-service", "/api/payment/v2/api-docs", "2.0"));
+            resources.add(swaggerResource("account-service", "/api/account/v2/api-docs", "2.0"));
             return resources;
         }
 

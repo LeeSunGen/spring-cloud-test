@@ -1,6 +1,12 @@
 spring:
   application:
     name: gateway-service
+  datasource:
+      druid:
+        url: jdbc:mysql://47.75.85.48:3306/spring-cloud-test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        username: root
+        password: MyNewPass4!
+
 server:
   port: 8768
 eureka:
@@ -14,7 +20,7 @@ eureka:
       defaultZone: http://111.231.189.44:8761/eureka
 zuul:
   prefix: /api # 设置一个公共的前缀
-  ignored-services: '*' #此配置表名忽略所有默认路由，都由配置文件决定
+#  ignored-services: '*' #此配置表名忽略所有默认路由，都由配置文件决定
   host:
       connect-timeout-millis: 20000
       socket-timeout-millis: 20000

@@ -33,21 +33,29 @@ public class OAuth2ServerConfig {
 
         @Value("${security.oauth2.resource.id}")
         private String resourceIds;
-//        @Autowired
-//        public DataSource dataSource;
-//        @Bean
-//        public TokenStore tokenStore() {
-//            return new JdbcTokenStore(dataSource);
-//        }
+
+        private static final String[] AUTH_WHITELIST = {
+                "/**/v2/api-docs",
+                "/swagger-resources",
+                "/swagger-resources/**",
+                "/configuration/ui",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "swagger-resources/configuration/ui",
+                "/doc.html",
+                "/webjars/**"
+        };
 
         @Override
         public void configure(ResourceServerSecurityConfigurer resources) {
-//            resources.resourceId("oauth2-resource").tokenStore(tokenStore());
-//            resources.resourceId("oauth2-resource").stateless(true);
+
         }
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
+            for (String au:AUTH_WHITELIST) {
+                http.authorizeRequests().antMatchers(au).permitAll();
+            }
             // @formatter:off
             http
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
@@ -57,7 +65,6 @@ public class OAuth2ServerConfig {
                     .anonymous()
                     .and()
                     .authorizeRequests()
-//                    .antMatchers("/product/**").access("#oauth2.hasScope('select') and hasRole('ROLE_USER')")
                     .antMatchers(resourceIds).authenticated();//配置order访问控制，必须认证过后才可以访问
             // @formatter:on
         }
@@ -72,6 +79,7 @@ public class OAuth2ServerConfig {
         AuthenticationManager authenticationManager;
         @Autowired
         private DataSource dataSource;
+
         @Bean
         public TokenStore tokenStore() {
             return new JdbcTokenStore(dataSource);
@@ -81,7 +89,6 @@ public class OAuth2ServerConfig {
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
             clients.withClientDetails(clientDetails());
         }
-
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
             //datasource存储token方案
@@ -104,11 +111,11 @@ public class OAuth2ServerConfig {
             //允许表单认证
             oauthServer.allowFormAuthenticationForClients();
         }
-
         @Bean
         public ClientDetailsService clientDetails() {
             return new JdbcClientDetailsService(dataSource);
         }
+
     }
 
 
