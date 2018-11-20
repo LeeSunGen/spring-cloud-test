@@ -98,6 +98,31 @@
 ![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/rancher-container-details.jpg "在这里输入图片标题")
 
 ### 网关鉴权方案
+```text
+本方案采用zuul集成oauth2协议
+部署要点:
+网关模块对外暴露端口
+其他微服务模块不对外暴露端口
+通过内网IP实现接口调用
+```
+* 获取授权(token有效期30d)
+```text
+http://111.231.189.44:8768/oauth/token?grant_type=client_credentials&scope=app&client_id=acme&client_secret=acmesecret
+```
+
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/get_token.jpg "在这里输入图片标题")
+
+* 拿到access_token请求接口,否则报权限错误
+```text
+http://111.231.189.44:8768/api/order/rest/order/getOrderInfoById?orderId=2&access_token=294d68ef-5d1c-4d07-9bc7-4e1132c2cef8
+```
+```text
+{
+  "error": "unauthorized",
+  "error_description": "Full authentication is required to access this resource"
+}
+```
+![输入图片说明](https://github.com/qccr-twl2123/spring-cloud-test/blob/master/resources/images/get_data.jpg "在这里输入图片标题")
 
 
 ### 参考资料
