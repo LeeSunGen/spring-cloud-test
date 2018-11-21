@@ -47,9 +47,9 @@ public class OAuth2ServerConfig {
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            for (String au:AUTH_WHITELIST) {
-                http.authorizeRequests().antMatchers(au).permitAll();
-            }
+//            for (String au:AUTH_WHITELIST) {
+//                http.authorizeRequests().antMatchers(au).permitAll();
+//            }
             // @formatter:off
             http
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
