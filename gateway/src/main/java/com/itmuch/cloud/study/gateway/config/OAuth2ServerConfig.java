@@ -75,6 +75,7 @@ public class OAuth2ServerConfig {
         @Autowired
         private DataSource dataSource;
 
+        @Primary
         @Bean
         public TokenStore tokenStore() {
             return new JdbcTokenStore(dataSource);
@@ -85,7 +86,7 @@ public class OAuth2ServerConfig {
             clients.withClientDetails(clientDetails());
         }
 
-        @Primary
+
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
             //datasource存储token方案
