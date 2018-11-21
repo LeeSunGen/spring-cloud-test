@@ -154,3 +154,5 @@ http://111.231.189.44:8768/api/order/rest/order/getOrderInfoById?orderId=2&acces
 [微服务开发基础框架](https://github.com/babylikebird/Micro-Service-Skeleton.git)
 
 [springcloud 实现github CAS 单点登录](https://segmentfault.com/a/1190000011098539#articleHeader4)
+
+[springcloud和springboot版本兼容问题](http://www.yayihouse.com/yayishuwu/chapter/1557)
