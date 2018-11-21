@@ -17,6 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
@@ -86,6 +87,19 @@ public class OAuth2ServerConfig {
             clients.withClientDetails(clientDetails());
         }
 
+        @Primary
+        @Bean
+        public AuthorizationServerTokenServices tokenServices() {
+            DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+            defaultTokenServices.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(30)); // 30天
+            defaultTokenServices.setRefreshTokenValiditySeconds(-1);
+            defaultTokenServices.setSupportRefreshToken(true);
+            defaultTokenServices.setReuseRefreshToken(false);
+            defaultTokenServices.setTokenStore(tokenStore());
+            defaultTokenServices.setClientDetailsService(clientDetails());
+//            tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
+            return defaultTokenServices;
+        }
 
         @Override
         public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -93,13 +107,7 @@ public class OAuth2ServerConfig {
             endpoints.authenticationManager(authenticationManager);
             endpoints.tokenStore(tokenStore());
             // 配置TokenServices参数
-            DefaultTokenServices tokenServices = new DefaultTokenServices();
-            tokenServices.setTokenStore(endpoints.getTokenStore());
-            tokenServices.setSupportRefreshToken(false);
-            tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
-            tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
-            tokenServices.setAccessTokenValiditySeconds((int) TimeUnit.DAYS.toSeconds(30)); // 30天
-            endpoints.tokenServices(tokenServices);
+            endpoints.tokenServices(tokenServices());
         }
 
         @Override
