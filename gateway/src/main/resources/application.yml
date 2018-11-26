@@ -17,7 +17,7 @@ eureka:
       prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://111.231.189.44:8761/eureka
+      defaultZone: http://172.17.186.58:8761/eureka
 zuul:
   prefix: /api # 设置一个公共的前缀
 #  ignored-services: '*' #此配置表名忽略所有默认路由，都由配置文件决定
