@@ -52,6 +52,14 @@ logging:
 ribbon:
   ReadTimeout: 6000
   SocketTimeout: 6000
+
+# zookeeper 配置
+curator:
+  retryCount: 5 #重试次数
+  elapsedTimeMs: 5000 #重试间隔时间
+  connectString: 111.231.189.44:2181 # zookeeper 地址
+  sessionTimeoutMs: 60000 # session超时时间
+  connectionTimeoutMs: 5000 # 连接超时时间
 # 调用远程微服务
 feign:
   remote:

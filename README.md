@@ -9,6 +9,7 @@
 3. 监控
 4. 日志
 5. 自动(扩容,缩容)
+6. 一致性
 ```
 [网关接口汇总测试地址](http://111.231.189.44:8768/swagger-ui.html)
 
@@ -166,3 +167,5 @@ http://111.231.189.44:8768/api/order/rest/order/getOrderInfoById?orderId=2&acces
 [springcloud和springboot版本兼容问题](http://www.yayihouse.com/yayishuwu/chapter/1557)
 
 [SpringCloud中国社区](https://github.com/SpringCloud)
+
+[XXL是一系列开源软件的集合:任务调度、配置中心、消息队列、RPC通讯、API管理、Web框架、爬虫、Excel工具、搜索、SSO](http://www.xuxueli.com/page/projects.html)
