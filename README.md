@@ -2,6 +2,14 @@
 ```text
 本项目采用spring-cloud-boot-docker为基础架构,目的在于搭建一个微服务快速开发脚手架.
 ```
+* 微服务关键词
+```text
+1. 鉴权
+2. 配置
+3. 监控
+4. 日志
+5. 自动(扩容,缩容)
+```
 [网关接口汇总测试地址](http://111.231.189.44:8768/swagger-ui.html)
 
 * 环境搭建
@@ -156,3 +164,5 @@ http://111.231.189.44:8768/api/order/rest/order/getOrderInfoById?orderId=2&acces
 [springcloud 实现github CAS 单点登录](https://segmentfault.com/a/1190000011098539#articleHeader4)
 
 [springcloud和springboot版本兼容问题](http://www.yayihouse.com/yayishuwu/chapter/1557)
+
+[SpringCloud中国社区](https://github.com/SpringCloud)
