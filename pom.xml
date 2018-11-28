@@ -28,6 +28,7 @@
           <imageName>itmuch/${project.artifactId}:${project.version}</imageName>
           <baseImage>java</baseImage>
           <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+          <skipDockerBuild>true</skipDockerBuild>
           <resources>
             <resource>
               <targetPath>/</targetPath>

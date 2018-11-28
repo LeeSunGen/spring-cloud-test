@@ -40,35 +40,6 @@
   </dependencyManagement>
 
 
-  <!--<build>-->
-    <!--<plugins>-->
-      <!--&lt;!&ndash; 添加spring-boot的maven插件 &ndash;&gt;-->
-      <!--<plugin>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-      <!--</plugin>-->
-
-      <!--&lt;!&ndash; 添加docker-maven插件 &ndash;&gt;-->
-      <!--<plugin>-->
-        <!--<groupId>com.spotify</groupId>-->
-        <!--<artifactId>docker-maven-plugin</artifactId>-->
-        <!--<version>0.4.13</version>-->
-        <!--<configuration>-->
-          <!--<imageName>itmuch/${project.artifactId}:${project.version}</imageName>-->
-          <!--<baseImage>java</baseImage>-->
-          <!--<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>-->
-          <!--<resources>-->
-            <!--<resource>-->
-              <!--<targetPath>/</targetPath>-->
-              <!--<directory>${project.build.directory}</directory>-->
-              <!--<include>${project.build.finalName}.jar</include>-->
-            <!--</resource>-->
-          <!--</resources>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
-    <!--</plugins>-->
-  <!--</build>-->
-
   <build>
     <plugins>
       <!-- 添加spring-boot的maven插件 -->
@@ -77,12 +48,13 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
 
+      <!-- 添加docker-maven插件 -->
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.4.13</version>
         <configuration>
-          <imageName>111.231.189.44:5000/itmuch/microservice-discovery-eureka:0.0.4</imageName>
+          <imageName>itmuch/${project.artifactId}:${project.version}</imageName>
           <baseImage>java</baseImage>
           <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
           <resources>
@@ -92,11 +64,39 @@
               <include>${project.build.finalName}.jar</include>
             </resource>
           </resources>
-
-          <!-- 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 -->
-          <serverId>docker</serverId>
         </configuration>
       </plugin>
     </plugins>
   </build>
+
+  <!--<build>-->
+    <!--<plugins>-->
+      <!--&lt;!&ndash; 添加spring-boot的maven插件 &ndash;&gt;-->
+      <!--<plugin>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+      <!--</plugin>-->
+
+      <!--<plugin>-->
+        <!--<groupId>com.spotify</groupId>-->
+        <!--<artifactId>docker-maven-plugin</artifactId>-->
+        <!--<version>0.4.13</version>-->
+        <!--<configuration>-->
+          <!--<imageName>111.231.189.44:5000/itmuch/microservice-discovery-eureka:0.0.4</imageName>-->
+          <!--<baseImage>java</baseImage>-->
+          <!--<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>-->
+          <!--<resources>-->
+            <!--<resource>-->
+              <!--<targetPath>/</targetPath>-->
+              <!--<directory>${project.build.directory}</directory>-->
+              <!--<include>${project.build.finalName}.jar</include>-->
+            <!--</resource>-->
+          <!--</resources>-->
+
+          <!--&lt;!&ndash; 与maven配置文件settings.xml中配置的server.id一致，用于推送镜像 &ndash;&gt;-->
+          <!--<serverId>docker</serverId>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+    <!--</plugins>-->
+  <!--</build>-->
 </project>
